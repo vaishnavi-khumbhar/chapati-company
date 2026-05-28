@@ -85,13 +85,13 @@ function Navbar() {
 
           {/* BUTTON */}
 
-          <button className="btn order-btn">
+         <button className="btn order-btn">
 
-            <FaShoppingCart className="me-2" />
+  <FaShoppingCart />
 
-            Order Now
+  <span>Order Now</span>
 
-          </button>
+</button>
 
         </div>
 

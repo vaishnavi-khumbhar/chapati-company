@@ -1,65 +1,121 @@
+import {
+  FaSeedling,
+  FaFire,
+  FaLeaf,
+  FaHome
+} from "react-icons/fa";
+
 function About() {
+
+  const features = [
+    {
+      icon: <FaSeedling />,
+      title: "Fresh Wheat",
+      text: "Freshly ground wheat for softness and nutrition.",
+      color: "#ff9800"
+    },
+
+    {
+      icon: <FaFire />,
+      title: "Pure Ghee",
+      text: "Rich aroma and delicious homemade taste.",
+      color: "#ff5722"
+    },
+
+    {
+      icon: <FaLeaf />,
+      title: "No Preservatives",
+      text: "Healthy chapatis made using clean ingredients.",
+      color: "#43a047"
+    },
+
+    {
+      icon: <FaHome />,
+      title: "Homemade Quality",
+      text: "Just like rotis made in your own kitchen.",
+      color: "#8e24aa"
+    }
+  ];
+
   return (
-    <section id="about" className="py-5">
+
+    <section id="about" className="about-section py-5">
+
       <div className="container">
 
+        {/* TITLE */}
+
         <div className="text-center mb-5">
-          <h2 className="fw-bold">Why Choose Us?</h2>
-          <p className="text-muted">
-            Homemade taste with premium quality ingredients
+
+          <span className="about-badge">
+            WHY CHOOSE US
+          </span>
+
+          <h2 className="about-title mt-4">
+            Freshness You Can
+            <span> Trust</span>
+          </h2>
+
+          <p className="about-subtitle">
+            Experience authentic homemade chapatis prepared
+            with love, hygiene, and premium quality ingredients.
           </p>
+
         </div>
+
+        {/* CARDS */}
 
         <div className="row g-4">
 
-          <div className="col-md-6 col-lg-3">
-            <div className="card h-100 border-0 shadow">
-              <div className="card-body text-center">
-                <h4>Fresh Wheat</h4>
-                <p>
-                  Freshly ground wheat for softness and nutrition.
-                </p>
-              </div>
-            </div>
-          </div>
+          {features.map((item, index) => (
 
-          <div className="col-md-6 col-lg-3">
-            <div className="card h-100 border-0 shadow">
-              <div className="card-body text-center">
-                <h4>Pure Ghee</h4>
-                <p>
-                  Rich aroma and delicious homemade taste.
-                </p>
-              </div>
-            </div>
-          </div>
+            <div className="col-md-6 col-lg-3" key={index}>
 
-          <div className="col-md-6 col-lg-3">
-            <div className="card h-100 border-0 shadow">
-              <div className="card-body text-center">
-                <h4>No Preservatives</h4>
-                <p>
-                  Healthy chapatis made using clean ingredients.
-                </p>
-              </div>
-            </div>
-          </div>
+              <div className="about-card">
 
-          <div className="col-md-6 col-lg-3">
-            <div className="card h-100 border-0 shadow">
-              <div className="card-body text-center">
-                <h4>Homemade Quality</h4>
+                {/* ICON */}
+
+                <div
+                  className="about-icon"
+                  style={{
+                    background: item.color
+                  }}
+                >
+                  {item.icon}
+                </div>
+
+                {/* CONTENT */}
+
+                <h4>
+                  {item.title}
+                </h4>
+
                 <p>
-                  Just like rotis made in your own kitchen.
+                  {item.text}
                 </p>
+
+                {/* GLOW */}
+
+                <div
+                  className="card-glow"
+                  style={{
+                    background: item.color
+                  }}
+                ></div>
+
               </div>
+
             </div>
-          </div>
+
+          ))}
 
         </div>
+
       </div>
+
     </section>
-  )
+
+  );
 }
 
-export default About
+export default About;
